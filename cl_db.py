@@ -3,7 +3,6 @@ from sqlalchemy import (
     Column, 
     Integer, 
     String, 
-    Sequence,
     Float, 
     Date, 
     DateTime, 
@@ -35,15 +34,19 @@ class db_review(my_Base):
     id_game = Column(Integer, ForeignKey('game.id'))
     vote = Column(Integer, nullable=False) 
 
-    "SELECT COUNT(id) FROM review WHERE id_game = 111111"
 
 class db_rating(my_Base):
     __tablename__ = "rating"
 
     id_game = Column(Integer, ForeignKey('game.id'), primary_key=True)
+    min_votes = Column(Integer, primary_key=True)   # si ripete
+    m_percentile = Column(Integer)                  # si ripete
+    global_avg = Column(Float)                      # si ripete
+    count = Column(Integer)
+    mean = Column(Integer)
+    median = Column(Integer)
+    std = Column(Integer)
     rating = Column(Integer)
-
-
 
 
 '''
