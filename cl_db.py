@@ -32,7 +32,7 @@ class db_review(my_Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     id_game = Column(Integer, ForeignKey('game.id'))
-    vote = Column(Integer, nullable=False) 
+    vote = Column(Float, nullable=False) 
 
 
 class db_rating(my_Base):
@@ -43,10 +43,10 @@ class db_rating(my_Base):
     m_percentile = Column(Integer)                  # si ripete
     global_avg = Column(Float)                      # si ripete
     count = Column(Integer)
-    mean = Column(Integer)
-    median = Column(Integer)
-    std = Column(Integer)
-    rating = Column(Integer)
+    mean = Column(Float)
+    median = Column(Float)
+    std = Column(Float)
+    rating = Column(Float)
 
 
 '''
