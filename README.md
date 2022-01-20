@@ -7,8 +7,8 @@ __**Procedura**__
   - crea le 3 tabelle
   - popola le tabelle leggendo il file "bgg.csv"
   - calcola il nostro rating con 3 criteri diversi (in base alla scelta percentile*) e la media
-  - printa il grafico, 4 linee contenente la distribuzione di frequenza:
-    - della media
+  - printa il grafico con 4 linee, che rappresentano la distribuzione di frequenza del:
+    - la media
     - rating con percentile* 10
     - rating con percentile* 50
     - rating con percentile* 80
@@ -24,6 +24,8 @@ WR = (v / (v+**m**)) * R + (**m** / (v+**m**)) * C
   - se ho osservato 5 voti per un gioco, aggiunge **'m'** voti uguali alla media globale.
 - _C_ = la media globale the mean vote across the whole report  6.42)
 
-*Il percentile utilizzato per calcolare il rating si riferisce alla scelta del parametro **m**. Quindi, se scegliamo un percentile 10, andiamo a scegliere **m** uguale al numero di voti che ha il gioco che nel 10% inferiore di tutti i giochi.
+*Il percentile utilizzato per calcolare il rating si riferisce alla scelta del parametro **m**. Quindi, se scegliamo un percentile 10, andiamo a scegliere **m** uguale al numero di voti che ha il gioco che nel 10% inferiore di tutti i giochi. 
+- Più scegliamo un percentile alto (quindi un **m** alto), più tutti i rating tenderanno alla media globale. 
+- Se scegliamo **m** = 0 il randing sarà uguale alla media
 
 Fonte: https://stats.stackexchange.com/questions/6418/rating-system-taking-account-of-number-of-votes
