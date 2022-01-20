@@ -1,6 +1,7 @@
 # MDS-il_migliore_di_tutti
 
-**Procedura**
+__**Procedura**__
+
 - Creare un database, esempio "CREATE DATABASE mds_il_migliore_di_tutti"
 - Lanciare lo script "flow.py". Questo script fa le seguenti cose:
   - crea le 3 tabelle
@@ -12,7 +13,8 @@
     - rating con percentile* 50
     - rating con percentile* 80
 
-**Spiegazione della formula**
+
+__**Spiegazione della formula**__
 
 https://stats.stackexchange.com/questions/6418/rating-system-taking-account-of-number-of-votes
 
