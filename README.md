@@ -13,7 +13,9 @@
     - rating con percentile* 80
 
 **Spiegazione della formula**
+
 https://stats.stackexchange.com/questions/6418/rating-system-taking-account-of-number-of-votes
+
 WR = (v / (v+**m**)) * R + (**m** / (v+**m**)) * C
         - _R_ = media voti del gioco
         - _v_ = n° di voti
