@@ -22,4 +22,4 @@ WR = (v / (v+**m**)) * R + (**m** / (v+**m**)) * C
           - se ho osservato 5 voti per un gioco, aggiunge **'m'** voti uguali alla media globale.
         - _C_ = la media globale the mean vote across the whole report  6.42)
 
-* Il percentile utilizzato per calcolare il rating si riferisce alla scelta del parametro **m**. Quindi, se scegliamo un percentile 10, andiamo a scegliere **m** uguale al numero di voti che ha il gioco che nel 10% inferiore di tutti i giochi.
+*Il percentile utilizzato per calcolare il rating si riferisce alla scelta del parametro **m**. Quindi, se scegliamo un percentile 10, andiamo a scegliere **m** uguale al numero di voti che ha il gioco che nel 10% inferiore di tutti i giochi.
