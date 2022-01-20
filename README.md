@@ -16,8 +16,6 @@ __**Procedura**__
 
 __**Spiegazione della formula**__
 
-https://stats.stackexchange.com/questions/6418/rating-system-taking-account-of-number-of-votes
-
 WR = (v / (v+**m**)) * R + (**m** / (v+**m**)) * C
         - _R_ = media voti del gioco
         - _v_ = n° di voti
@@ -27,3 +25,5 @@ WR = (v / (v+**m**)) * R + (**m** / (v+**m**)) * C
         - _C_ = la media globale the mean vote across the whole report  6.42)
 
 *Il percentile utilizzato per calcolare il rating si riferisce alla scelta del parametro **m**. Quindi, se scegliamo un percentile 10, andiamo a scegliere **m** uguale al numero di voti che ha il gioco che nel 10% inferiore di tutti i giochi.
+
+Fonte: https://stats.stackexchange.com/questions/6418/rating-system-taking-account-of-number-of-votes
