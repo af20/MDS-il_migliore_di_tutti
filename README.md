@@ -17,12 +17,12 @@ __**Procedura**__
 __**Spiegazione della formula**__
 
 WR = (v / (v+**m**)) * R + (**m** / (v+**m**)) * C
-        - _R_ = media voti del gioco
-        - _v_ = n° di voti
-        - _m_ = spiegando con 2 esempi:
-          - nel sito IMDB, 'm' è il n°minimo di voti richiesti per essere nella Top 250, ed attualmente sono 3000
-          - se ho osservato 5 voti per un gioco, aggiunge **'m'** voti uguali alla media globale.
-        - _C_ = la media globale the mean vote across the whole report  6.42)
+- _R_ = media voti del gioco
+- _v_ = n° di voti
+- _m_ = spiegando con 2 esempi:
+  - nel sito IMDB, 'm' è il n°minimo di voti richiesti per essere nella Top 250, ed attualmente sono 3000
+  - se ho osservato 5 voti per un gioco, aggiunge **'m'** voti uguali alla media globale.
+- _C_ = la media globale the mean vote across the whole report  6.42)
 
 *Il percentile utilizzato per calcolare il rating si riferisce alla scelta del parametro **m**. Quindi, se scegliamo un percentile 10, andiamo a scegliere **m** uguale al numero di voti che ha il gioco che nel 10% inferiore di tutti i giochi.
 
