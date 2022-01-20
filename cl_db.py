@@ -11,12 +11,7 @@ from sqlalchemy import (
     ForeignKey
 )
 
-from db_conn import (
-    my_Base, 
-    engine, 
-    session, 
-    table_names, 
-)
+from db_conn import my_Base
 
 
 
@@ -48,12 +43,3 @@ class db_rating(my_Base):
     std = Column(Float)
     rating = Column(Float)
 
-
-'''
-TABELLA 1
-  'game'
-    id = int
-    title = str
-  
-
-'''

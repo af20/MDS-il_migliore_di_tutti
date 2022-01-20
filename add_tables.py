@@ -10,6 +10,10 @@ from cl_db import (
     db_rating
 )
 
+from sqlalchemy import inspect
+inspector = inspect(engine)
+table_names = inspector.get_table_names(schema='public')
+
 
 if "game" not in table_names:
     my_Base.metadata.tables["game"].create(bind=engine, checkfirst=True)

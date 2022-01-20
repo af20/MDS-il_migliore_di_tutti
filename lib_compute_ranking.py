@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 from db_conn import engine
+from datetime import datetime, date
+
 '''
 - leggiamo i giochi dal DB
 - li cicliamo
@@ -16,7 +18,8 @@ def support_get_rating(C, m, R, v):
         - R = average for the movie (mean) = (Rating)
         - v = number of votes for the movie = (votes)
         - m = minimum number of votes required to be listed in the Top 250 (currently 3000)
-        - C = the mean vote across the whole report (currently 6.9)
+              se ho osservato 5 voti, aggiungi ai 5 voti 'N' voti (es. 4 con percentile_10) uguali alla media generale (es. 6.42) ==> 10
+        - C = the mean vote across the whole report (currently 6.42)
       Se: 
         - 'm' = 0 ---> tutti i ratings saranno uguali alla media 
         - 'm' = infinito ---> tutti i ratings saranno uguali a C (global_avg_vote)
@@ -68,6 +71,8 @@ def compute_our_rating(m_percentile: int, delete_existing: bool = None, use_give
   assert delete_existing in [None, True, False], "Error, bad 'delete_existing' choosen, choose a value in [None, True, False]"
   assert use_given_m == None or (type(use_given_m) == int and use_given_m >= 0), "Error, bad 'use_given_m' choosen, choose None or an integer number >= 0."
 
+  time_start = datetime.now()
+
   if use_given_m == None: # calcolo 'm' come percentile del numero delle recensioni di tutti i giochi
     query = "SELECT COUNT(id) FROM review GROUP BY id_game ORDER BY COUNT(id) DESC"
     v_count = pd.read_sql(query, engine)['count'].tolist()
@@ -85,9 +90,9 @@ def compute_our_rating(m_percentile: int, delete_existing: bool = None, use_give
   global_avg_vote = C = support_get_global_average_vote()
 
   for i, id_game in enumerate(my_dict['v_id_games_todo']):
-    if i % 1 == 0:
+    if i % 100 == 0:
       perc_done = round((( i + my_dict['len_games_done'] ) / my_dict['len_games_all'])*100,2)
-      print(i, '/', my_dict['len_games_all'], ' | ', perc_done, '%')
+      print(i, '/', my_dict['len_games_all'], ' | ', perc_done, '%', '   |   time delta:', str(datetime.now() - time_start))
     
     query = "SELECT vote FROM review WHERE id_game = " + str(id_game) + " ORDER BY vote DESC"
     v_votes = pd.read_sql(query, engine)['vote'].tolist()
