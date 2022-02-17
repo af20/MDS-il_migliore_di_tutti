@@ -13,7 +13,7 @@ def lib_read_csv_file_bgg():
 
 DF = lib_read_csv_file_bgg()
 
-df_unique = DF[['id','title']].drop_duplicates()
+df_unique = DF[['id','title']].drop_duplicates() # non serve, è un plus
 db_game_records = engine.execute("SELECT COUNT(*) FROM game").fetchall()[0][0]
 
 if db_game_records == 0: # 23,810
@@ -21,7 +21,6 @@ if db_game_records == 0: # 23,810
 
 df_review = DF[['id', 'vote']]
 df_review = df_review.rename(columns= {'id': 'id_game'})
-df_review['id'] = df_review.index.values
 
 db_review_records = engine.execute("SELECT COUNT(*) FROM review").fetchall()[0][0]
 if db_review_records == 0: # 706,813
