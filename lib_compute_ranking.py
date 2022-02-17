@@ -4,11 +4,12 @@ from db_conn import engine
 from datetime import datetime, date
 
 '''
-- leggiamo i giochi dal DB
-- li cicliamo
-  - leggiamo le reviews
-  - calcolo rating nostro
-  - append nella tabella 'rating'
+  FLOW
+  - legge i giochi dal DB
+  - li cicla
+    - legge le reviews
+    - calcola il nostro rating
+    - append nella tabella 'rating'
 '''
 
 def support_get_rating(C, m, R, v):
@@ -84,8 +85,7 @@ def compute_our_rating(m_percentile: int, delete_existing: bool = None, use_give
     query = "DELETE FROM rating WHERE min_votes = " + str(min_votes)
     engine.execute(query)
 
-  my_dict = support_get_id_games_to_rank(min_votes) # lista degli id_game, su cui andiamo a calcolare il ranking
-  # v_id_games_todo   len_games_all   len_games_done
+  my_dict = support_get_id_games_to_rank(min_votes) # lista degli id_game, su cui andiamo a calcolare il ranking  # dict -> v_id_games_todo   len_games_all   len_games_done
   global_avg_vote = C = support_get_global_average_vote()
 
   query_insert = """INSERT INTO rating (id_game, min_votes, m_percentile, global_avg, count, mean, median, std, rating)
